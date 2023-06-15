@@ -10,7 +10,6 @@ class Calculator<T extends Number> {
         this.number_2 = number_2;
     }
 
-    // Метод для выполнения математических операций
     public T calculate(String operation) {
         switch(operation) {
             case "+":
@@ -28,8 +27,6 @@ class Calculator<T extends Number> {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Ввод значений
         System.out.print("Введите 1-е значение: ");
         double value1 = scanner.nextDouble();
 
@@ -39,10 +36,9 @@ class Calculator<T extends Number> {
         System.out.print("Выберите операцию(+-*/): ");
         String operator = scanner.next();
 
-        // Создание объекта калькулятора
+        // объект калькулятора
         Calculator<Double> calculator = new Calculator<>(value1, value2);
-
-        // Выполнение операции и вывод результата
+        
         Double result = calculator.calculate(operator);
         if (result == null) {
             System.out.println("Что-то пошло не так с операциями!");
